@@ -1,17 +1,17 @@
+
 # Stock Price Movement Prediction Using Logistic Regression
 
 This project is part of the final team project for the course **Introduction to Artificial Intelligence (AAI 501)** at the University of San Diego. The objective is to apply AI and machine learning techniques to predict the next-day price movement (up or down) of publicly traded companies in the Information Technology sector, using historical stock price data from the New York Stock Exchange (NYSE).
 
-We explore and compare two logistic regression models:
+---
 
-- **Model 1**: Trained on data from a single company (e.g., AAPL) to capture its individual behavior.
-- **Model 2**: Trained on the same company plus 9 additional companies from the same sector to explore whether incorporating similar businesses improves prediction accuracy.
+## Problem Statement
 
-The goal is to determine whether company-specific patterns or cross-company trends lead to more accurate predictions.
+Stock price movement prediction is a classic challenge in financial analytics and AI. This project investigates whether historical stock data can be used to predict the **next-day direction** of stock prices (up or down) for companies in the Information Technology sector. We aim to evaluate how effectively logistic regression can identify short-term trends, and whether company-specific or cross-company patterns yield better predictive power.
 
 ---
 
-##  Dataset
+## Dataset
 
 - **Source**: Kaggle – NYSE Stock Prices
 - **Files Used**:
@@ -22,7 +22,7 @@ We filtered 10 Information Technology companies (including AAPL) for the modelin
 
 ---
 
-##  Target Variable
+## Target Variable
 
 The models predict whether the **closing price of a company will increase the next trading day**:
 - `1` → Price goes up
@@ -30,7 +30,17 @@ The models predict whether the **closing price of a company will increase the ne
 
 ---
 
-##  Key Steps
+## Experiment Design
+
+- **Model 1**: Logistic Regression trained on one company’s data (AAPL)  
+- **Model 2**: Logistic Regression trained on a combined dataset of 10 IT sector companies  
+- **Comparison Objective**: Evaluate if including similar companies improves predictive accuracy  
+- **Evaluation Metrics**: Accuracy, Precision, Recall, F1 Score, ROC AUC  
+- **Target Variable**: Binary label indicating if the closing price increases the next day
+
+---
+
+## Key Steps
 
 - Preprocessing and feature engineering using rolling averages, daily returns, and volume changes
 - Time-based train-test split (80% train, 20% test)
@@ -40,15 +50,36 @@ The models predict whether the **closing price of a company will increase the ne
 
 ---
 
-##  Team Members
+## Getting Started
 
-- Member 1: [Your Name] – EDA, preprocessing
-- Member 2: [Name] – Logistic Model 1 (single company)
-- Member 3: [Name] – Logistic Model 2 (multi-company)
+To run the notebook and replicate the results:
+
+```bash
+git clone https://github.com/your-repo-url
+cd stock-prediction
+pip install -r requirements.txt
+```
+
+Then open `stock-prediction.ipynb` or `model_pipeline.ipynb` to begin.
 
 ---
 
-## 📄 License
+## Team Members
 
-This project was developed for academic purposes as part of the AAI 501 – Introduction to Artificial Intelligence course at the University of San Diego.  
-It is open-sourced under the **MIT License**.
+- **Jack Kim**
+  - GitHub: [JackKim123](https://github.com/jackkim-usd)
+  - LinkedIn: [Jack Kim](https://www.linkedin.com/in/)
+- **Mustafa Yunus**
+  - GitHub: [mustafayunus](https://github.com/Mustafayunus3099-ui)
+  - LinkedIn: [Mustafa Yunus](https://www.linkedin.com/in/)
+- **Ali Azizi** 
+  - GitHub: [al1az1z1](https://github.com/al1az1z1)
+  - LinkedIn: [Ali Azizi](https://www.linkedin.com/in/al1az1z1)
+
+---
+
+## License & Academic Use
+
+This project was developed as part of the course **AAI 501 – Introduction to Artificial Intelligence** at the **University of San Diego**.  
+It is intended for educational purposes only and is released under the **MIT License**.  
+All datasets are publicly available and sourced from Kaggle. Code contributions follow the [PEP 8 Style Guide](https://peps.python.org/pep-0008/).
